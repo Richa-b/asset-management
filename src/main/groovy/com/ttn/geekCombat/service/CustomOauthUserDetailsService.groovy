@@ -35,11 +35,10 @@ class CustomOauthUserDetailsService implements OauthUserDetailsService {
         try {
             log.debug "Trying to fetch user details for user profile: ${userProfile}"
             userDetails = userDetailsService.loadUserByUsername userProfile.email
-
             Collection<GrantedAuthority> allRoles = userDetails.authorities + defaultRoles
             oauthUser = new OauthUser(userDetails.username, userDetails.password, allRoles, userProfile)
         } catch (UsernameNotFoundException unfe) {
-          throw unfe
+            throw unfe
         }
 
         return oauthUser

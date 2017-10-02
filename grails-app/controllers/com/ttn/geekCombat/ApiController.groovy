@@ -8,6 +8,7 @@ import grails.plugin.springsecurity.annotation.Secured
 class ApiController {
     SpringSecurityService springSecurityService
 
+    @Secured(['ROLE_ADMIN'])
     def index() {
         APIResponseDTO apiResponseDTO = APIResponseDTO.getSuccessDto("Test Successful Message");
         apiResponseDTO.data = "Welcome " + springSecurityService.currentUser?.username
