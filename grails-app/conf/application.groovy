@@ -15,6 +15,8 @@ grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com
 grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName = 'tokenValue'
 grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName = 'username'
 
+grails.plugin.springsecurity.rest.logout.endpointUrl='/api/logout'
+grails.plugin.springsecurity.rest.token.validation.headerName='Authorization'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         [pattern: '/', access: ['permitAll']],
         [pattern: '/error', access: ['permitAll']],
